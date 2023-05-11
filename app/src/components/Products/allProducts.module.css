@@ -1,0 +1,71 @@
+.container {
+  width: 300px;
+  position: relative;
+  box-sizing: border-box;
+  height: 550px;
+  box-shadow: 12px 10px 25px 12px #e49a9a;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+}
+.prices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.disc_price {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(139, 139, 139, 1);
+  text-decoration: line-through;
+  font-family: "Montserrat", sans-serif;
+}
+.discount {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(255, 50, 161, 1);
+
+  font-family: "Montserrat", sans-serif;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+}
+
+.modal {
+  width: 200px;
+  height: 40px;
+  display: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  z-index: 1;
+  left: 15%;
+  bottom: 50%;
+}
+.container:hover .modal {
+  transition: 0.5 ease;
+  display: block;
+  cursor: pointer;
+  background-color: yellow;
+}
+.container:hover {
+  background-color: rgba(148, 94, 94, 0.5);
+  transition: 0.3s ease;
+}

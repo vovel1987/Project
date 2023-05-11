@@ -1,0 +1,118 @@
+.container {
+  width: 65%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+}
+
+.button_none {
+  display: none;
+}
+.button {
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  width: 30px;
+  border-radius: 10px 0 0 10px;
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid black;
+  cursor: pointer;
+}
+.button_2 {
+  position: absolute;
+  font-size: 28px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  width: 30px;
+  border-radius: 0 10px 10px 0;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 83px;
+  border-left: 1px solid black;
+  cursor: pointer;
+}
+.button:hover,.button_2:hover{
+  box-shadow: 0px 0px 21px 1px rgba(201,43,43,1);
+  transition: 0.3s;
+  /* transform: scale(1.2,1.2); */
+
+}
+.image {
+  width: 200px;
+  height: 180px;
+}
+.image:hover{
+  transform: scale(1.2,1.2);
+}
+.count_block {
+  position: relative;
+  border: 1px solid black;
+  display: flex;
+  border-radius: 10px;
+  width: 115px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 36px;
+  align-items: center;
+
+}
+.summe {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+.count {
+  position: absolute;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  left: 45px;
+}
+.block1 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items:center;
+  width: 100%;
+}
+.prices{
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 30px;
+  padding: 10px;
+  /* width: 50px; */
+  box-sizing: border-box;
+  width: 100%;
+}
+.prices_disc{
+  text-decoration: line-through;
+  color: rgb(151, 149, 149);
+}
+.button_del{
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+ background-color:  rgba(217,154,217,0.76);
+}
+.delete_icon{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.delete_icon:hover{
+  box-shadow: 0px 0px 44px 20px rgba(217,154,217,0.76);
+}

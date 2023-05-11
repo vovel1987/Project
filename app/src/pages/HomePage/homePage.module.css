@@ -1,0 +1,184 @@
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
+}
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(161, 226, 235, 1);
+  height: 400px;
+}
+.block1 {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.title {
+  font-size: 63px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.button {
+  width: 160px;
+  height: 50px;
+  border: none;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+.button:hover{
+background-color: yellow;
+}
+.image {
+  width: 500px;
+
+  object-fit: contain;
+
+  padding-right: 20px;
+  height: 350px;
+}
+.catalogBlock1{
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+.catalog{
+    /* margin-top: 30px; */
+    background-color: rgb(217,217,217);
+    box-sizing: border-box;
+}
+.title2{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+}
+.catalogBtn{
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+}
+.catalogBtn:hover{
+  background-color: yellow;
+}
+.category{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
+}
+.sale_block{
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  align-items: center;
+  background: #49f349;
+}
+.image{
+width:420px;
+height:420px
+}
+.percent{
+  font-size: 63px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+.percent_block{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+ 
+}
+.input{
+  height: 80px;
+  border-radius: 20px;
+  border:none;
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  padding-left: 20px;
+}
+.btn_disc{
+  height: 80px;
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  border: 2px solid white;
+  background-color:#49f349; 
+  border-radius: 20px;
+}
+.btn_disc:hover{
+  background-color: yellow;
+}
+.sale_block2{
+  margin-top: 30px;
+  box-sizing: border-box;
+  
+
+}
+.sale_img{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.title3{
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  padding-left: 20px;
+  /* animation-name: myAnimation; */
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: relative;
+}
+
+@keyframes myAnimation{
+
+  0%{
+    left: 150px;
+  color: rgb(247, 8, 8);
+  transform: scale(1.2,1.2);
+  
+  
+  }
+  
+  /* 50%{
+  color: rgb(121, 34, 34);
+
+  } */
+  
+  
+  100%{
+    left: 700px;
+    color: rgb(252, 8, 8);
+    transform: scale(1.8,1.8);
+    
+  }
+  }
