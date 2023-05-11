@@ -19,7 +19,6 @@ export default function ProductDisc({
   const link = `/products/${id}`;
   const dispatch = useDispatch();
   return (
-    
     <>
       {discont_price !== null ? (
         <div className={styles.container}>

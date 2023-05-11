@@ -21,7 +21,6 @@ export default function Products({
   const dispatch = useDispatch();
   return (
     <div>
-      
       <div>
         {discont_price !== null ? (
           <div className={styles.container}>
@@ -32,7 +31,7 @@ export default function Products({
               onClick={() => dispatch(addProdukt(id))}
               className={styles.modal}
             >
-              Add to cart
+              Add to cart 
             </button>
             <div className={styles.prices}>
               <p className={styles.disc_price}>{discont_price}€</p>
