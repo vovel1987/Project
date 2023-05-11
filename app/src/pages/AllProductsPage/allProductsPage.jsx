@@ -7,7 +7,7 @@ import FilterBar from "../../components/FilterBar/filterBar";
 import { resetState } from "../../store/productsReducer/productsReducer";
 
 export default function AllProductsPage() {
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.list);
   const data = products.filter((elem) => elem.show && elem.showDisc);
   console.log(data);
 

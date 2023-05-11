@@ -9,7 +9,7 @@ import { resetState } from "../../store/productsReducer/productsReducer";
 export default function CategoriesProductPage() {
   const { id } = useParams();
 
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.list);
   const data = products.filter((elem) => elem.show && elem.showDisc);
   const categoryProducts = data.filter((elem) => elem.categoryId === +id);
 

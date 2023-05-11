@@ -16,6 +16,8 @@ import CategoriesProductPage from "../../pages/CategoriesProductPage/categoriesP
 import ProductPage from "../../pages/ProductPage/productPage";
 import NotFound from "../../pages/NotFound/notFound";
 import BasketPage from "../../pages/BasketPage/basketPage";
+import { fetchProducts } from "../../store/productSlice/productSlice";
+import { fetchCategories } from "../../store/categoriesSlice/categoriesslice";
 
 function App() {
   // const data = async() =>{
@@ -27,9 +29,14 @@ function App() {
 
   const dispatch = useDispatch();
 
+  // useEffect(() => {
+  //   dispatch(asyncLoadCategories);
+  //   dispatch(asyncLoadProductss);
+  // }, []);
+
   useEffect(() => {
-    dispatch(asyncLoadCategories);
-    dispatch(asyncLoadProductss);
+    dispatch(fetchProducts());
+    dispatch(fetchCategories());
   }, []);
 
   return (

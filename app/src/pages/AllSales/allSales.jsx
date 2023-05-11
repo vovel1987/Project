@@ -7,7 +7,7 @@ import FilterSale from "../../components/FilterSale/filterSale";
 import { resetState } from "../../store/productsReducer/productsReducer";
 
 export default function AllSales() {
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.list);
   const data = products.filter((elem) => elem.show && elem.showDisc);
   const dispatch = useDispatch();
 

@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Basket from "../../components/Basket/basket";
 
 export default function BasketPage() {
-  const { products, basket } = useSelector((state) => state);
+  // const { products, basket } = useSelector((state) => state);
+  const products = useSelector((state) => state.products.list)
+  const basket = useSelector((state) => state.basket.list)
 
   const element = basket.map((elem) => {
     const product = products.find(({ id }) => id === elem.id);
