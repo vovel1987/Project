@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./allProducts.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addProdukt } from "../../store/basketReducer/basketReducer";
+// import { addProdukt } from "../../store/basketReducer/basketReducer";
+import { addProdukt } from "../../store/basketSlice/basketSliceN";
 import FilterBar from "../FilterBar/filterBar";
 
 export default function Products({
@@ -31,7 +32,7 @@ export default function Products({
               onClick={() => dispatch(addProdukt(id))}
               className={styles.modal}
             >
-              Add to cart 
+              Add to cart
             </button>
             <div className={styles.prices}>
               <p className={styles.disc_price}>{discont_price}€</p>

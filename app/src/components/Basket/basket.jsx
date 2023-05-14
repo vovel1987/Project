@@ -5,7 +5,7 @@ import {
   decrementProdukt,
   deleteItem,
   incrementProdukt,
-} from "../../store/basketReducer/basketReducer";
+} from "../../store/basketSlice/basketSliceN";
 
 export default function Basket({
   id,
@@ -31,6 +31,8 @@ export default function Basket({
   const summe = (
     discont_price !== null ? count * discont_price : count * price
   ).toFixed(2);
+
+
 
 
   return (
@@ -65,7 +67,11 @@ export default function Basket({
         onClick={() => dispatch(deleteItem(id))}
         className={styles.button_del}
       >
-        <img className={styles.delete_icon} src="/images/cross.png" alt="Delete" />
+        <img
+          className={styles.delete_icon}
+          src="/images/cross.png"
+          alt="Delete"
+        />
       </button>
       {/* </div> */}
     </div>

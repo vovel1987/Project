@@ -11,6 +11,7 @@ export default function CategoriesProductPage() {
 
   const products = useSelector((state) => state.products.list);
   const data = products.filter((elem) => elem.show && elem.showDisc);
+  console.log(data);
   const categoryProducts = data.filter((elem) => elem.categoryId === +id);
 
   const dispatch = useDispatch();

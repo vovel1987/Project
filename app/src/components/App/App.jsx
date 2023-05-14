@@ -16,8 +16,8 @@ import CategoriesProductPage from "../../pages/CategoriesProductPage/categoriesP
 import ProductPage from "../../pages/ProductPage/productPage";
 import NotFound from "../../pages/NotFound/notFound";
 import BasketPage from "../../pages/BasketPage/basketPage";
-import { fetchProducts } from "../../store/productSlice/productSlice";
-import { fetchCategories } from "../../store/categoriesSlice/categoriesslice";
+import { fetchProducts } from "../../store/productSlice/productSliceN";
+import { fetchCategories } from "../../store/categoriesSlice/categoriessliceN";
 
 function App() {
   // const data = async() =>{

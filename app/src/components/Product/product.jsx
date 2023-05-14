@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./product.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addProdukt } from "../../store/basketReducer/basketReducer";
+import { addProdukt } from "../../store/basketSlice/basketSliceN";
+// import { addProdukt } from "../../store/basketReducer/basketReducer";
 
 export default function Product({
   title,

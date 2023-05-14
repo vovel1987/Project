@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./productDisc.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addProdukt } from "../../store/basketReducer/basketReducer";
+// import { addProdukt } from "../../store/basketReducer/basketReducer";
+import { addProdukt } from "../../store/basketSlice/basketSliceN";
 import FilterBar from "../FilterBar/filterBar";
 
 export default function ProductDisc({

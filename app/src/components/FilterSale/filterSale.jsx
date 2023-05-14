@@ -6,7 +6,9 @@ import {
   filterPrice,
   inputFilter,
   sortSelect,
-} from "../../store/productsReducer/productsReducer";
+} from "../../store/productSlice/productSliceN";
+
+// } from "../../store/productsReducer/productsReducer";
 
 export default function FilterBar({ price, discont_price, id }) {
   // const products = useSelector((state) => state.products);

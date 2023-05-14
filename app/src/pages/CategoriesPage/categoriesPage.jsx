@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Categories from "../../components/Categories";
 
 export default function CategoriesPage() {
-  const categories = useSelector((state) => state.categories.list);
+  const categories = useSelector((state) => state.category.list);
   return (
     <div className={styles.container}>
       <h1 className={styles.text}>Categories</h1>

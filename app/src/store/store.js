@@ -4,9 +4,10 @@ import { productsReducer } from "./productsReducer/productsReducer";
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 import { basketReducer } from "./basketReducer/basketReducer";
-import { categoriesSlice } from "./categoriesSlice/categoriesslice";
-import productSlice from "./productSlice/productSlice";
-import basketSlice from "./basketSlice/basketSlice";
+
+import productSlice from "./productSlice/productSliceN";
+import basketSlice from "./basketSlice/basketSliceN";
+import { catSlice, categSlice } from "./categoriesSlice/categoriessliceN";
 
 // const rootReducer = combineReducers({
 //   categories: categoriesReducer,
@@ -18,8 +19,8 @@ import basketSlice from "./basketSlice/basketSlice";
 
 export const store = configureStore({
   reducer: {
-    categories: categoriesSlice,
     products: productSlice,
     basket: basketSlice,
+    category: categSlice,
   },
 });

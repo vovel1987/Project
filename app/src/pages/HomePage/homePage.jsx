@@ -6,8 +6,8 @@ import ProductDisc from "../../components/ProductDisc/productDisc";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
-  const categories = useSelector((state) => state.categories);
-  const products = useSelector((state) => state.products);
+  const categories = useSelector((state) => state.category.list);
+  const products = useSelector((state) => state.products.list);
 
   const arr = products
     .filter((elem) => elem.discont_price)

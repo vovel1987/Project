@@ -6,7 +6,9 @@ import {
   filterPrice,
   inputFilter,
   sortSelect,
-} from "../../store/productsReducer/productsReducer";
+} from "../../store/productSlice/productSliceN";
+
+// } from "../../store/productsReducer/productsReducer";
 
 export default function FilterBar({ price, discont_price, id }) {
   // const products = useSelector((state) => state.products);
@@ -61,7 +63,7 @@ export default function FilterBar({ price, discont_price, id }) {
       <label htmlFor="priceValue">
         Change price:
         <select onChange={sortSelectValue}>
-          <option value="" >Price</option>
+          <option value="">Price</option>
           <option value="1">Min price</option>
           <option value="-1">Max price</option>
         </select>

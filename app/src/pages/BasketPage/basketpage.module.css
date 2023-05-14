@@ -4,3 +4,10 @@
     margin-bottom: 50px;
     margin-top: 50px;
 }
+.loadPage{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    margin:50px 30px;
+}

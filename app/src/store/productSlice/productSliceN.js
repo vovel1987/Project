@@ -32,13 +32,14 @@ export const productSlice = createSlice({
   name: "products",
   initialState: {
     list: [],
+    status: undefined,
+    error: undefined,
   },
-  status: undefined,
-  error: undefined,
+
   reducers: {
     filterPrice: (state, action) => {
       state.list = state.list.map((elem) => ({ ...elem, showDisc: true }));
-      state.list.map((elem) => {
+      state.list = state.list.map((elem) => {
         if (
           !(elem.discont_price === null
             ? elem.price >= action.payload.min &&
@@ -54,19 +55,25 @@ export const productSlice = createSlice({
     },
     filterCheck: (state, action) => {
       state.list = state.list.map((elem) => ({ ...elem, show: true }));
+
       if (action.payload) {
-        return state.list.map((elem) => {
+        // return   state.list.map((elem) => {
+
+        const value = state.list.map((elem) => {
           if (elem.discont_price === null) {
             elem.show = false;
           }
           return elem;
         });
+        state.list = value;
       } else {
-        return state.list.map((elem) => ({ ...elem, show: true }));
+        const value = state.list.map((elem) => ({ ...elem, show: true }));
+        state.list = value;
+        // return state.list.map((elem) => ({ ...elem, show: true }));
       }
     },
     sortSelect: (state, action) => {
-      [...state.list].sort((a, b) => {
+      state.list = [...state.list].sort((a, b) => {
         if (action.payload === 1) {
           return a.discount - b.discount;
         } else if (action.payload === -1) {
@@ -78,17 +85,18 @@ export const productSlice = createSlice({
     },
     inputFilter: (state, action) => {
       state.list = state.list.map((elem) => ({ ...elem, show: true }));
-      state.list.map((elem) => ({
+      state.list = state.list.map((elem) => ({
         ...elem,
         show: elem.title.toLowerCase().startsWith(action.payload.toLowerCase()),
       }));
     },
     resetState: (state, action) => {
-      state.list.map((elem) => ({
+      state.list = state.list.map((elem) => ({
         ...elem,
         show: true,
         showDisc: true,
       }));
+      console.log(state.list);
     },
   },
   extraReducers: (builder) => {
@@ -108,5 +116,5 @@ export const productSlice = createSlice({
 });
 
 export const { filterPrice, filterCheck, sortSelect, inputFilter, resetState } =
-  fetchProducts.actions;
-export default fetchProducts.reducer;
+  productSlice.actions;
+export default productSlice.reducer;
