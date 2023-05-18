@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./basketpage.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import Basket from "../../components/Basket/basket";
+import BasketTotal from "../../components/BasketTotal/basketTotal";
 
 export default function BasketPage() {
   // const { products, basket } = useSelector((state) => state);
@@ -12,6 +13,7 @@ export default function BasketPage() {
     const product = products.find(({ id }) => id === elem.id);
     return { ...elem, ...product };
   });
+ 
 
   useEffect(() => {
     localStorage.setItem("basket", JSON.stringify(basket));
@@ -28,9 +30,14 @@ export default function BasketPage() {
       return (
         <>
           <div className={styles.container}>
-            {element.map((elem) => (
-              <Basket key={elem.id} {...elem} />
-            ))}
+            <div>
+              {element.map((elem) => (
+                <Basket key={elem.id} {...elem} />
+              ))}
+            </div>
+            <div>
+              <BasketTotal element={element} />
+            </div>
           </div>
         </>
       );

@@ -4,16 +4,39 @@ import Categories from "../../components/Categories";
 import styles from "./homePage.module.css";
 import ProductDisc from "../../components/ProductDisc/productDisc";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { fetchPost } from "../../store/productSlice/productSliceN";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function HomePage() {
   const categories = useSelector((state) => state.category.list);
   const products = useSelector((state) => state.products.list);
 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const arr = products
     .filter((elem) => elem.discont_price)
     .sort(() => Math.random() - 0.5)
     .slice(0, 4);
   console.log(arr);
+  const onSubmit = (data) => {
+    try {
+      console.log(data);
+      fetchPost(data);
+      reset();
+      // toast("sale coupon");
+      toast.success("You received a coupon in the E-mail", {
+        theme: "dark",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -51,13 +74,33 @@ export default function HomePage() {
         <div className={styles.percent_block}>
           <p className={styles.percent}>5% off</p>
           <p className={styles.percent}>on the first order</p>
-          <form className={styles.form} action="">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className={styles.form}
+            action=""
+          >
             <input
               className={styles.input}
-              type="number"
+              type="tel"
               placeholder="Phone number : +49"
+              {...register("telefon", {
+                required: true,
+                maxLength: 22,
+              })}
             />
+
+            <p className={styles.error}>
+              {errors.telefon !== undefined
+                ? (errors.telefon.type = "Field is`t empty")
+                : ""}
+            </p>
+
             <button className={styles.btn_disc}>Get a discount</button>
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              theme="light"
+            />
           </form>
         </div>
       </div>

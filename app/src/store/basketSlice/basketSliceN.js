@@ -1,30 +1,27 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 
-// const getBasket = JSON.parse(localStorage.getItem("basket")) ?? [];
+
+export const basketFetchPost = createAsyncThunk(
+  "basketProducts/basketFetchPost", async(obj) =>{
+    const response = await fetch('http://localhost:3333/order/send',{
+       method:'POST',
+       body:JSON.stringify(obj),
+       headers:{ 'Content-type':'application/json;charset-UTF-8' }
+    })
+    const data = await response.json()
+    console.log(data);
+  }
+)
+
+
+
+
+
+
 const getBasket = JSON.parse(localStorage.getItem("basket")) ?? [];
 
-// const writeBasket = (basket) =>
-//   localStorage.setItem("basket", JSON.stringify(basket));
-
 const findId = (state, elem_id) => state.find((elem) => elem.id === elem_id);
-
-// useEffect(() => {
-//   const serializedState = JSON.stringify(mySlice.getState());
-//   localStorage.setItem("mySlice", serializedState);
-// }, [mySlice.getState]);
-
-// const loadState = () => {
-//   try {
-//     const serializedState = localStorage.getItem("mySlice");
-//     if (serializedState === null) {
-//       return undefined;
-//     }
-//     return JSON.parse(serializedState);
-//   } catch (err) {
-//     return undefined;
-//   }
-// };
 
 export const basketSlice = createSlice({
   name: "basketProducts",

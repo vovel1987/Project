@@ -28,6 +28,33 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
+export const fetchPost=createAsyncThunk('products/fetchPost', async (obj) =>{
+  const response = await fetch('http://localhost:3333/sale/send',{
+     method:'POST',
+     body:JSON.stringify(obj),
+     headers:{ 'Content-type':'application/json;charset=UTF-8'}
+  })
+  const data = await response.json()
+  console.log(data);
+}
+
+)
+
+// export const fetchPost = createAsyncThunk(
+//   "products/fetchPosts",
+//   async (obj) => {
+//     fetch("http://localhost:3333/sale/send", {
+//       method: "POST",
+//       body: JSON.stringify(obj),
+//       headers: {
+//         "Content-type": "application/json; charset=UTF-8",
+//       },
+//     })
+//       .then((response) => response.json())
+//       .then((json) => console.log(json));
+//   }
+// );
+
 export const productSlice = createSlice({
   name: "products",
   initialState: {

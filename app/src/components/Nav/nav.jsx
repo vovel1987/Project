@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./nav.module.css";
+import { useSelector } from "react-redux";
 
 export default function Nav() {
+  const basket = useSelector((state) => state.basket.list);
+
+  const products = basket.reduce((acc, elem) => acc + elem.count, 0);
   const links = [
     { id: 1, label: "Main Page", to: "/" },
     { id: 2, label: "All Products", to: "/products/all" },
@@ -11,10 +15,14 @@ export default function Nav() {
       id: 4,
       label: <img src="/images/basket.png" alt="Basket" />,
       to: "/basket",
+      count: products,
     },
   ];
 
   const link = `categories/all`;
+
+  const isActive = ({ isActive }) =>
+    [isActive ? '' : "", styles.link1].join(" ");
   return (
     <nav>
       <div className={styles.block1}>
@@ -27,7 +35,13 @@ export default function Nav() {
       <div className={styles.block2}>
         <div className={styles.links}>
           {links.map((link) => (
-            <NavLink className={styles.link1} key={link.id} to={link.to}>
+            <NavLink
+              data-count={link.count || undefined}
+              // className={styles.link1}
+              className={isActive}
+              key={link.id}
+              to={link.to}
+            >
               {link.label}
             </NavLink>
           ))}
