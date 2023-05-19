@@ -1,5 +1,5 @@
 nav {
-  /* width:100%; */
+  width: 100%;
   height: 5%;
   margin: 10px;
   padding: 10px;
@@ -9,7 +9,6 @@ nav {
   align-items: center;
   /* position: fixed; */
   box-sizing: border-box;
-
 }
 .icon {
   width: 70px;
@@ -34,19 +33,24 @@ nav {
 }
 .block1 {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 60px;
+  /* gap: 60px; */
+  width: 30%;
+  box-sizing: border-box;
 }
 .block2 {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
+  width: 70%;
+  box-sizing: border-box;
 }
 .links {
   display: flex;
-  gap: 50px;
-  margin-right: 100px;
+ width: 70%;
+  justify-content: space-around;
+  margin-right: 20px;
   align-items: center;
 }
 .link1 {
@@ -56,7 +60,10 @@ nav {
   color: black;
   position: relative;
   border: none;
- 
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .link1[data-count]::after {
   content: attr(data-count);
@@ -75,17 +82,17 @@ nav {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-font-family: sans-serif;
+  font-family: sans-serif;
 }
 .active {
   border: 2px solid rgb(200, 90, 90);
 }
-.link1:hover{
-    transform: scale(1.2,1.2);
+.link1:hover {
+  transform: scale(1.2, 1.2);
   background-color: yellow;
   height: 30px;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  }
+}

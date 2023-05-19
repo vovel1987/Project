@@ -1,0 +1,58 @@
+.container {
+  display: grid;
+  grid-template-columns: 20% 25% 35% 20%;
+  justify-items: center;
+}
+
+.container form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.form_p {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.form_input {
+  width: 20%;
+  height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  border: none;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.label_select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.option {
+    font-size: 16px;
+    border-radius: 5px;
+    height: 25px;
+    border: none;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+}
+.input_search {
+  width: 80%;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  border: none;
+  height: 25px;
+  align-self: center;
+}

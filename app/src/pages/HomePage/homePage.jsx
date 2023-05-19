@@ -48,7 +48,7 @@ export default function HomePage() {
             <button className={styles.button}>Sale</button>
           </Link>
         </div>
-        <div>
+        <div className={styles.banner_icon}>
           <img
             className={styles.image}
             src="/images/pflanze.jpg"
@@ -70,7 +70,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className={styles.sale_block}>
-        <img className={styles.image} src="/images/zwerge.jpg" alt="" />
+        <img className={styles.image_1} src="/images/zwerge.jpg" alt="" />
         <div className={styles.percent_block}>
           <p className={styles.percent}>5% off</p>
           <p className={styles.percent}>on the first order</p>

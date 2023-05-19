@@ -20,8 +20,8 @@ export default function AllProductsPage() {
 
   return (
     <div className={styles.container}>
-      <FilterBar />
       <h1 className={styles.text}>All products</h1>
+      <FilterBar />
       <div className={styles.products}>
         {data.map((elem) => (
           <Products key={elem.id} {...elem} />

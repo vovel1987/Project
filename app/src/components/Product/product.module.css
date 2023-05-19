@@ -46,9 +46,9 @@
   font-family: "Montserrat", sans-serif;
 }
 .image {
-  width: 500px;
+  width: 100%;
+  object-fit: contain;
   height: 500px;
-  background-color: rgb(182, 182, 25);
 }
 .prices {
   display: flex;

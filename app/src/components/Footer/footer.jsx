@@ -38,9 +38,6 @@ export default function Footer() {
           <p className={styles.day}>24 hours a day</p>
         </div>
       </div>
-      <div>
-        
-      </div>
     </div>
   );
 }
