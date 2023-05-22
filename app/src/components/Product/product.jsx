@@ -23,7 +23,7 @@ export default function Product({
     <div className={styles.container}>
       {discont_price !== null ? (
         <>
-          <p className={styles.title}>{title}</p>
+          <h1 className={styles.title}>{title}</h1>
           <div className={styles.block}>
             <div className={styles.block_image}>
               <img className={styles.image} src={`${url}${image}`} alt="" />

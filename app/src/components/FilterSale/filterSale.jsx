@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useRef, useState } from "react";
+import { CgMenuGridO } from "react-icons/cg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   filterCheck,
@@ -39,8 +39,23 @@ export default function FilterBar({ price, discont_price, id }) {
   const price1 = "test";
   const sortSelectValue = (event) => dispatch(sortSelect(+event.target.value));
   const searchInput = (event) => dispatch(inputFilter(event.target.value));
+
+  const useRefFilter2 = useRef()
+  const filterHandler =() =>{
+    useRefFilter2.current.classList.toggle(styles.filter_open)
+  }
   return (
-    <div className={styles.container} >
+    <>
+     <p className={styles.filter_text}>
+        <CgMenuGridO className={styles.burgerButton} onClick={filterHandler} />
+        Filter
+      </p>
+    <div className={styles.container} ref={useRefFilter2}>
+    <div className={styles.div_btn} >
+          <button className={styles.btn_close} onClick={filterHandler}>
+            X
+          </button>
+        </div>
       <form onChange={filterByPrices}>
         <p className={styles.form_p}>Price :</p>
         <input className={styles.form_input}
@@ -78,5 +93,6 @@ export default function FilterBar({ price, discont_price, id }) {
         name="title"
       />
     </div>
+    </>
   );
 }

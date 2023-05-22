@@ -84,3 +84,34 @@
   padding: 10px;
   margin-left: 60px;
 }
+@media (max-width: 768px) {
+  .block_image {
+    width: 100%;
+  }
+  .block_descr {
+    width: 100%;
+    padding: 0;
+  }
+  .disc_price {
+    font-size: 20px;
+  }
+  .block {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .title {
+    margin: 0;
+    text-align: center;
+  }
+  .button{
+    margin: 0 auto;
+  }
+  .prices{
+    justify-content: space-around;
+  }
+  .descr{
+    font-size: 18px;
+    padding: 10px;
+  }
+}

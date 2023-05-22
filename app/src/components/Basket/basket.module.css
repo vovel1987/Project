@@ -39,19 +39,19 @@
   border-left: 1px solid black;
   cursor: pointer;
 }
-.button:hover,.button_2:hover{
-  box-shadow: 0px 0px 21px 1px rgba(201,43,43,1);
+.button:hover,
+.button_2:hover {
+  box-shadow: 0px 0px 21px 1px rgba(201, 43, 43, 1);
   transition: 0.3s;
   /* transform: scale(1.2,1.2); */
-
 }
 .image {
   width: 100%;
   object-fit: contain;
   height: 150px;
 }
-.image:hover{
-  transform: scale(1.2,1.2);
+.image:hover {
+  transform: scale(1.2, 1.2);
 }
 .count_block {
   position: relative;
@@ -63,7 +63,6 @@
   box-sizing: border-box;
   height: 36px;
   align-items: center;
-
 }
 .summe {
   font-size: 22px;
@@ -77,16 +76,22 @@
   font-family: "Montserrat", sans-serif;
   left: 45px;
 }
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  left: 45px;
+}
 .block1 {
   display: flex;
   flex-direction: column;
   padding: 10px;
   box-sizing: border-box;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   width: 100%;
 }
-.prices{
+.prices {
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
@@ -95,13 +100,12 @@
   /* width: 50px; */
   box-sizing: border-box;
   margin-right: 10px;
-  
 }
-.prices_disc{
+.prices_disc {
   text-decoration: line-through;
   color: rgb(151, 149, 149);
 }
-.button_del{
+.button_del {
   width: 25px;
   height: 25px;
   display: flex;
@@ -110,13 +114,28 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
- background-color:  rgba(217,154,217,0.76);
+  background-color: rgba(217, 154, 217, 0.76);
 }
-.delete_icon{
+.delete_icon {
   width: 25px;
   height: 25px;
   border-radius: 50%;
 }
-.delete_icon:hover{
-  box-shadow: 0px 0px 44px 20px rgba(217,154,217,0.76);
+.delete_icon:hover {
+  box-shadow: 0px 0px 44px 20px rgba(217, 154, 217, 0.76);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0;
+  }
+  .title {
+    font-size: 14px;
+   
+  }
+  .count_block {
+  }
+  .summe{
+    font-size: 18px;
+  }
 }

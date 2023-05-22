@@ -1,4 +1,6 @@
 import React from "react";
+import { TbDeviceLandlinePhone } from "react-icons/tb";
+import { TfiEmail } from "react-icons/tfi";
 import styles from "./footer.module.css";
 
 export default function Footer() {
@@ -6,8 +8,15 @@ export default function Footer() {
     <div>
       <div className={styles.info_block}>
         <div className={styles.contact_block}>
-          <p className={styles.contact}>Contact</p>
-          <p className={styles.number}>+49 177 568 8888</p>
+          <p className={styles.contact}>Contact :</p>
+          <div className={styles.div_phone}>
+            <TbDeviceLandlinePhone className={styles.icon} />
+            <p className={styles.number}>+49 177 568 8888</p>
+          </div>
+          <div className={styles.div_phone}>
+            <TfiEmail   className={styles.icon} />
+            <p className={styles.number} >garden@gmail.com</p>
+          </div>
           <div className={styles.links_block}>
             <a href="https://www.instagram.com/" target="_blank">
               <img
@@ -26,7 +35,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.address_block}>
-          <p className={styles.address}>Address</p>
+          <p className={styles.address}>Address :</p>
 
           <a href="https://www.google.com/search?q=telranDE" target="_blank">
             <p className={styles.street}>
@@ -35,7 +44,7 @@ export default function Footer() {
           </a>
 
           <p className={styles.hours}>Working Hours:</p>
-          <p className={styles.day}>24 hours a day</p>
+          <p className={styles.day}>09.00-18.00</p>
         </div>
       </div>
     </div>

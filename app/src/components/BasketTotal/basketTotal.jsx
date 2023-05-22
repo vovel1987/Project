@@ -46,7 +46,7 @@ export default function BasketTotal(element) {
       <h1 className={styles.text_h1}>Order details :</h1>
       <div className={styles.price}>
         <p className={styles.text_total}>Total summe </p>
-        <p className={styles.text_price}>{+totalPrice}</p>
+        <p className={styles.text_price}>{+totalPrice}€</p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.block_form}>
         <input

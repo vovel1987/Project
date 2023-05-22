@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductDisc from "../../components/ProductDisc/productDisc";
 import styles from "./allSales.module.css";
 import FilterSale from "../../components/FilterSale/filterSale";
-import { resetState } from "../../store/productsReducer/productsReducer";
+// import { resetState } from "../../store/productsReducer/productsReducer";
+import { resetState } from "../../store/productSlice/productSliceN";
 
 export default function AllSales() {
   const products = useSelector((state) => state.products.list);

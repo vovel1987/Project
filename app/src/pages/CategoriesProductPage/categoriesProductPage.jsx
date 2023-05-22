@@ -31,9 +31,10 @@ export default function CategoriesProductPage() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
+        <h1 className={styles.text}>Category Items</h1>
       <FilterBar products={products} />
-      <div className={styles.container}>
+      <div className={styles.container_products}>
         {categoryProducts.map((elem) => (
           <Products key={elem.id} {...elem} />
         ))}

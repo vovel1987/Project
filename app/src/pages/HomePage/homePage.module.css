@@ -5,17 +5,19 @@
 .banner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   background-color: rgba(161, 226, 235, 1);
   height: 400px;
   width: 100%;
   gap: 10px;
+  /* background-image: url('../../../public/images/holz.jpg'); */
 }
 .block1 {
   padding-left: 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  justify-content:center;
   width: 50%;
 }
 .title {
@@ -41,7 +43,7 @@
 
 .banner_icon {
   width: 50%;
-  margin-right: 20px;
+ 
 }
 .image_1 {
   width: 80%;
@@ -99,8 +101,8 @@
 }
 .image {
   width: 100%;
-  object-fit: contain;
-  height: 360px;
+  object-fit: cover;
+  height: 100%;
 }
 .percent {
   font-size: 63px;
@@ -198,5 +200,39 @@ input::-webkit-inner-spin-button {
     left: 700px;
     color: rgb(252, 8, 8);
     transform: scale(1.8, 1.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 25px;
+  }
+  .button {
+    width: 130px;
+  }
+  .title2{
+    font-size: 25px;
+  }
+  .image_1{
+    display: none;
+  }
+  .sale_block{
+ 
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .percent{font-size: 35px;
+  }
+  .input{
+    font-size: 25px;
+  }
+  .btn_disc{
+    font-size: 25px;
+  }
+  .sale_img {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   box-sizing: border-box;
   }
 }

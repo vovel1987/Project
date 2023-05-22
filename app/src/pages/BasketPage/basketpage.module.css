@@ -1,21 +1,28 @@
-.container{
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 60% 1fr;
-    gap: 20px;
-
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  gap: 20px;
 }
-.loadPage{
-    font-size: 40px;
-    font-weight: bold;
-    font-family: "Montserrat", sans-serif;
-    color: black;
-    margin:50px 30px;
+.loadPage {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  margin: 50px 30px;
 }
 /* .block{
     display: flex;
     padding: 10px;
 } */
+
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

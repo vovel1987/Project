@@ -40,7 +40,7 @@ export default function Basket({
       {/* <div className={styles.block1}> */}
       <img className={styles.image} src={`${url}${image}`} alt="Flowers" />
       <div className={styles.block1}>
-        <p>{title}</p>
+        <p className={styles.title}>{title}</p>
         <div className={styles.count_block}>
           <button
             className={count === 1 ? styles.button_none : styles.button}

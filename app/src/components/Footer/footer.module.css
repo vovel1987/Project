@@ -13,7 +13,7 @@
   justify-content: space-between;
   padding: 10px;
   gap: 30px;
-  width: 70%;
+  width: 60%;
 }
 .contact {
   font-size: 40px;
@@ -24,7 +24,7 @@
   margin: 0;
 }
 .number {
-  font-size: 60px;
+  font-size: 22px;
   font-weight: bold;
   color: black;
   font-family: "Montserrat", sans-serif;
@@ -47,6 +47,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-left: 10px;
 }
 .address {
   font-size: 40px;
@@ -57,7 +58,7 @@
   margin: 0;
 }
 .street {
-  font-size: 40px;
+  font-size: 22px;
   font-weight: 100;
   color: black;
   font-family: "Montserrat", sans-serif;
@@ -66,17 +67,57 @@
 }
 .hours {
   font-size: 18px;
-  font-weight: 100;
+  font-weight: bold;
   color: black;
   font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
 }
 .day {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 300;
   color: black;
   font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
+}
+
+.div_phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+}
+.icon {
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    font-size: 18px;
+  }
+  .number {
+    font-size: 16px;
+  }
+  .icon{
+    width: 20px;
+    height: 20px;
+  }
+  .address{
+    font-size: 18px;
+  }
+  .street{
+    font-size: 16px;
+  }
+  .hours{
+    font-size: 18px;
+  }
+  .day{
+    font-size: 16px;
+  }
+}
+@media (max-width:420px){
+  .info_block{
+    flex-direction: column;
+  }
 }

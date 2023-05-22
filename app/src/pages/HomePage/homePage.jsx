@@ -72,8 +72,8 @@ export default function HomePage() {
       <div className={styles.sale_block}>
         <img className={styles.image_1} src="/images/zwerge.jpg" alt="" />
         <div className={styles.percent_block}>
-          <p className={styles.percent}>5% off</p>
-          <p className={styles.percent}>on the first order</p>
+          <h2 className={styles.percent}>5% off</h2>
+          <h2 className={styles.percent}>on the first order</h2>
           <form
             onSubmit={handleSubmit(onSubmit)}
             className={styles.form}
