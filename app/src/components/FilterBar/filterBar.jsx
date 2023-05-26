@@ -38,6 +38,10 @@ export default function FilterBar({ price, discont_price, id }) {
     dispatch(filterPrice(data));
   };
 
+
+
+
+
   // const reset = (event) => {
   //   const data = Object.fromEntries(new FormData(event.target.parentNode));
   //   console.log(data);
@@ -76,6 +80,7 @@ export default function FilterBar({ price, discont_price, id }) {
 
             // onChange={(event) => setMinValue(+event.target.value)}
           />
+         
           <input
             className={styles.form_input}
             type="number"
@@ -84,6 +89,7 @@ export default function FilterBar({ price, discont_price, id }) {
 
             // onChange={(event) => setMaxValue(+event.target.value)}
           />
+        
         </form>
 
         <div className={styles.checkbox}>

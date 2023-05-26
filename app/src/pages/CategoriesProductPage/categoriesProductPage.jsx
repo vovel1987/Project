@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from "react";
 import styles from "./categoriesProductPage.module.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Products from "../../components/Products/products";
 import FilterBar from "../../components/FilterBar/filterBar";
 import { resetState } from "../../store/productsReducer/productsReducer";
+import NotFound from "../NotFound/notFound";
 
 export default function CategoriesProductPage() {
   const { id } = useParams();
+  const nav = useNavigate();
 
   const products = useSelector((state) => state.products.list);
   const data = products.filter((elem) => elem.show && elem.showDisc);
-  console.log(data);
+
   const categoryProducts = data.filter((elem) => elem.categoryId === +id);
+
+  const currentcategory = data.find((elem) => elem.categoryId === +id);
+  
 
   const dispatch = useDispatch();
 
@@ -30,9 +35,15 @@ export default function CategoriesProductPage() {
     dispatch(resetState());
   }, []);
 
+  useEffect(() => {
+    if (!currentcategory) {
+      nav("/*");
+    }
+  }, [nav, currentcategory]);
+
   return (
     <div className={styles.container}>
-        <h1 className={styles.text}>Category Items</h1>
+      <h1 className={styles.text}>Category Items</h1>
       <FilterBar products={products} />
       <div className={styles.container_products}>
         {categoryProducts.map((elem) => (

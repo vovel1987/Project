@@ -5,6 +5,7 @@ import Categories from "../../components/Categories";
 
 export default function CategoriesPage() {
   const categories = useSelector((state) => state.category.list);
+  console.log(categories);
   return (
     <div className={styles.container}>
       <h1 className={styles.text}>Categories</h1>

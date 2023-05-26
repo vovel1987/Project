@@ -18,6 +18,7 @@ import NotFound from "../../pages/NotFound/notFound";
 import BasketPage from "../../pages/BasketPage/basketPage";
 import { fetchProducts } from "../../store/productSlice/productSliceN";
 import { fetchCategories } from "../../store/categoriesSlice/categoriessliceN";
+import ButtonToScroll from "../ButtontoScroll/buttonToScroll";
 
 function App() {
   // const data = async() =>{
@@ -50,8 +51,10 @@ function App() {
         <Route path="/categories/:id" element={<CategoriesProductPage />} />
         <Route path="products/:id" element={<ProductPage />} />
         <Route path="/*" element={<NotFound />} />
+
         <Route path="/basket" element={<BasketPage />} />
       </Routes>
+      <ButtonToScroll/>
       <Footer />
 
       <iframe
