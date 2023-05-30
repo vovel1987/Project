@@ -13,6 +13,7 @@ export const fetchProducts = createAsyncThunk(
           show: true,
           showDisc: true,
           discount: elem.price,
+          
         };
       } else {
         return {
@@ -20,25 +21,24 @@ export const fetchProducts = createAsyncThunk(
           show: true,
           showDisc: true,
           discount: elem.discont_price,
+          
         };
       }
     });
-    console.log(newData);
+
     return newData;
   }
 );
 
-export const fetchPost=createAsyncThunk('products/fetchPost', async (obj) =>{
-  const response = await fetch('http://localhost:3333/sale/send',{
-     method:'POST',
-     body:JSON.stringify(obj),
-     headers:{ 'Content-type':'application/json;charset=UTF-8'}
-  })
-  const data = await response.json()
+export const fetchPost = createAsyncThunk("products/fetchPost", async (obj) => {
+  const response = await fetch("http://localhost:3333/sale/send", {
+    method: "POST",
+    body: JSON.stringify(obj),
+    headers: { "Content-type": "application/json;charset=UTF-8" },
+  });
+  const data = await response.json();
   console.log(data);
-}
-
-)
+});
 
 // export const fetchPost = createAsyncThunk(
 //   "products/fetchPosts",
@@ -64,22 +64,48 @@ export const productSlice = createSlice({
   },
 
   reducers: {
+    // filterPrice: (state, action) => {
+    //   state.list = state.list.map((elem) => ({ ...elem, showDisc: true }));
+    //   console.log(state.list);
+    //   state.list = state.list.map((elem) => {
+    //     if (
+    //       !(elem.discont_price === null
+    //         ? elem.price >= action.payload.min &&
+    //           elem.price <= action.payload.max
+    //         : elem.discont_price >= action.payload.min &&
+    //           elem.discont_price <= action.payload.max)
+    //     ) {
+    //       return { ...elem, showDisc: false };
+    //     } else {
+    //       return { ...elem, showDisc: true };
+    //     }
+    //   });
+    // },
+
     filterPrice: (state, action) => {
-      state.list = state.list.map((elem) => ({ ...elem, showDisc: true }));
+      const priceFrom = action.payload.min;
+      const priceTo = action.payload.max === "" ? Infinity : action.payload.max;
+
+      state.list = state.list.map((elem) => ({
+        ...elem,
+        showDisc: true,
+        priceShow: true,
+      }));
+
       state.list = state.list.map((elem) => {
         if (
           !(elem.discont_price === null
-            ? elem.price >= action.payload.min &&
-              elem.price <= action.payload.max
-            : elem.discont_price >= action.payload.min &&
-              elem.discont_price <= action.payload.max)
+            ? elem.price >= priceFrom && elem.price <= priceTo
+            : elem.discont_price >= priceFrom && elem.discont_price <= priceTo)
         ) {
           return { ...elem, showDisc: false };
         } else {
           return { ...elem, showDisc: true };
         }
       });
+
     },
+
     filterCheck: (state, action) => {
       state.list = state.list.map((elem) => ({ ...elem, show: true }));
 

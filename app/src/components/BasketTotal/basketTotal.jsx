@@ -1,21 +1,27 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import styles from "./basketTotal.module.css";
-
+import { Link } from "react-router-dom";
 import React from "react";
-import { basketFetchPost } from "../../store/basketSlice/basketSliceN";
-import { ToastContainer,toast } from "react-toastify";
+import {
+  basketFetchPost,
+  deleteAll,
+} from "../../store/basketSlice/basketSliceN";
+import { ToastContainer, toast } from "react-toastify";
+import { useState } from "react";
 
 export default function BasketTotal(element) {
   const basket = useSelector((state) => state.basket.list);
   const products = useSelector((state) => state.products.list);
+const{value,setvalue}= useState()
+  const totalPrice = basket
+    .reduce((acc, item) => {
+      const product = products.find(({ id }) => id === item.id);
+      return acc + item.count * product.discount;
+    }, 0)
+    .toFixed(2);
 
-  const totalPrice = basket.reduce((acc, item) => {
-    const product = products.find(({ id }) => id === item.id);
-    return acc + item.count * product.discount;
-  }, 0).toFixed(2);
-
-
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -36,6 +42,9 @@ export default function BasketTotal(element) {
       toast.success("Thank you for your purchase", {
         theme: "dark",
       });
+      setTimeout(() => {
+        dispatch(deleteAll());
+      }, 4000);
     } catch (error) {
       console.log(error);
     }
@@ -58,13 +67,12 @@ export default function BasketTotal(element) {
           })}
         />
         <button>Buy now</button>
- 
       </form>
-      <ToastContainer
-              position="top-right"
-              autoClose={3000}
-              theme="light"
-            />
+      <Link to="/">
+        <div >
+          <ToastContainer position="top-right" autoClose={3000} theme="light" />
+        </div>
+      </Link>
     </div>
   );
 }

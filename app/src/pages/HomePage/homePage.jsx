@@ -30,7 +30,7 @@ export default function HomePage() {
       fetchPost(data);
       reset();
       // toast("sale coupon");
-      toast.success("You received a coupon in the E-mail", {
+      toast.success("You received a coupon in the phone number", {
         theme: "dark",
       });
     } catch (error) {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./filterBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { CgMenuGridO } from "react-icons/cg";
@@ -32,16 +32,31 @@ export default function FilterBar({ price, discont_price, id }) {
   };
   const filterByPrices = (event) => {
     const data = Object.fromEntries(new FormData(event.target.parentNode));
-    console.log(data);
     data.min = data.min === "" ? 0 : +data.min;
     data.max = data.max === "" ? Infinity : +data.max;
     dispatch(filterPrice(data));
   };
 
+  const [priceFrom, setPriceFrom] = useState(0);
+  const [priceTo, setPriceTo] = useState(Infinity);
+  useEffect(() => {
+    const target = { min: priceFrom, max: priceTo };
+    dispatch(filterPrice(target));
+  }, [dispatch, priceFrom, priceTo]);
 
+  const minHandle = (event) => {
+    const value = event.target.value === "" ? 0 : +event.target.value;
 
+    setPriceFrom(value);
+  };
 
+  const maxHandler = (event) => {
+    const value = event.target.value === "" ? Infinity : +event.target.value;
 
+    setPriceTo(value);
+  };
+
+  console.log(priceTo);
   // const reset = (event) => {
   //   const data = Object.fromEntries(new FormData(event.target.parentNode));
   //   console.log(data);
@@ -69,7 +84,7 @@ export default function FilterBar({ price, discont_price, id }) {
             X
           </button>
         </div>
-        <form onChange={filterByPrices}>
+        {/* <form onChange={filterByPrices}>
           <p className={styles.form_p}>Price :</p>
           
           <input
@@ -81,15 +96,41 @@ export default function FilterBar({ price, discont_price, id }) {
             // onChange={(event) => setMinValue(+event.target.value)}
           />
          
+
+          <input
+            className={styles.form_input}
+            type="number"
+            name="max"
+            id="123"
+            placeholder="to"
+
+            // onChange={(event) => setMaxValue(+event.target.value)}
+          />
+         
+         
+        
+        </form> */}
+
+        <form>
+          <p className={styles.form_p}>Price :</p>
+
+          <input
+            className={styles.form_input}
+            name="min"
+            type="number"
+            placeholder="from"
+            onChange={minHandle}
+            value={priceFrom === 0 ? "" : +priceFrom}
+          />
+
           <input
             className={styles.form_input}
             type="number"
             name="max"
             placeholder="to"
-
-            // onChange={(event) => setMaxValue(+event.target.value)}
+            value={priceTo === Infinity ? "" : +priceTo}
+            onChange={maxHandler}
           />
-        
         </form>
 
         <div className={styles.checkbox}>
