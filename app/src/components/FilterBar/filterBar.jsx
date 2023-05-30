@@ -14,17 +14,10 @@ import { useRef } from "react";
 // } from "../../store/productsReducer/productsReducer";
 
 export default function FilterBar({ price, discont_price, id }) {
-  // const products = useSelector((state) => state.products);
+
 
   const dispatch = useDispatch();
-  // const data = useSelector((state) => state.products);
-  // const [maxValue, setMaxValue] = useState(Infinity);
-  // const [minValue, setMinValue] = useState(0);
 
-  // const values = {
-  //   max: maxValue,
-  //   min: minValue,
-  // };
 
   const useRefFilter = useRef();
   const filterHandler = () => {
@@ -57,19 +50,13 @@ export default function FilterBar({ price, discont_price, id }) {
   };
 
   console.log(priceTo);
-  // const reset = (event) => {
-  //   const data = Object.fromEntries(new FormData(event.target.parentNode));
-  //   console.log(data);
-  //   data.min = 0;
-  //   data.max = Infinity;
-  //   // dispatch(resetState())
-  // };
+
 
   function salesHandler(event) {
     dispatch(filterCheck(event.target.checked));
   }
 
-  const price1 = "test";
+
   const sortSelectValue = (event) => dispatch(sortSelect(+event.target.value));
   const searchInput = (event) => dispatch(inputFilter(event.target.value));
   return (
@@ -93,7 +80,6 @@ export default function FilterBar({ price, discont_price, id }) {
             type="number"
             placeholder="from"
 
-            // onChange={(event) => setMinValue(+event.target.value)}
           />
          
 
@@ -104,7 +90,7 @@ export default function FilterBar({ price, discont_price, id }) {
             id="123"
             placeholder="to"
 
-            // onChange={(event) => setMaxValue(+event.target.value)}
+         
           />
          
          
