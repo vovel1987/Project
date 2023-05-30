@@ -13,7 +13,7 @@ import { useState } from "react";
 export default function BasketTotal(element) {
   const basket = useSelector((state) => state.basket.list);
   const products = useSelector((state) => state.products.list);
-const{value,setvalue}= useState()
+  const { value, setvalue } = useState();
   const totalPrice = basket
     .reduce((acc, item) => {
       const product = products.find(({ id }) => id === item.id);
@@ -69,7 +69,7 @@ const{value,setvalue}= useState()
         <button>Buy now</button>
       </form>
       <Link to="/">
-        <div >
+        <div>
           <ToastContainer position="top-right" autoClose={3000} theme="light" />
         </div>
       </Link>

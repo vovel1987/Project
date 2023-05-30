@@ -13,7 +13,7 @@ export default function CategoriesPage() {
         {categories.map((elem) => (
           <Categories
             key={elem.id}
-            // image={elem.image} title={elem.title} id={elem.id}
+          
             {...elem}
           />
         ))}

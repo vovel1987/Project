@@ -26,7 +26,7 @@ export default function Products({
         {discont_price !== null ? (
           <div className={styles.container}>
             <Link to={link}>
-              <img className={styles.image} src={`${url}${image}`} alt="" />
+              <img className={styles.image} src={`${url}${image}`} alt={title} />
             </Link>
             <button
               onClick={() => dispatch(addProdukt(id))}
@@ -44,7 +44,7 @@ export default function Products({
         ) : (
           <div className={styles.container}>
             <Link to={link}>
-              <img className={styles.image} src={`${url}${image}`} alt="" />
+              <img className={styles.image} src={`${url}${image}`} alt={title} />
             </Link>
             <button
               onClick={() => dispatch(addProdukt(id))}

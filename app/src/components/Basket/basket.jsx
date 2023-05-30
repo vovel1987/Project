@@ -38,7 +38,7 @@ export default function Basket({
   return (
     <div className={styles.container}>
       {/* <div className={styles.block1}> */}
-      <img className={styles.image} src={`${url}${image}`} alt="Flowers" />
+      <img className={styles.image} src={`${url}${image}`} alt={title} />
       <div className={styles.block1}>
         <p className={styles.title}>{title}</p>
         <div className={styles.count_block}>
