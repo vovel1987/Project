@@ -44,7 +44,7 @@ export default function BasketTotal(element) {
       });
       setTimeout(() => {
         dispatch(deleteAll());
-      }, 4000);
+      }, 3000);
     } catch (error) {
       console.log(error);
     }
@@ -68,11 +68,11 @@ export default function BasketTotal(element) {
         />
         <button>Buy now</button>
       </form>
-      <Link to="/">
-        <div>
+      {/* <Link to="/"> */}
+        {/* <div>
           <ToastContainer position="top-right" autoClose={3000} theme="light" />
-        </div>
-      </Link>
+        </div> */}
+      {/* </Link> */}
     </div>
   );
 }

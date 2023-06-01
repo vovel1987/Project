@@ -19,11 +19,15 @@ export default function HomePage() {
     reset,
     formState: { errors },
   } = useForm();
+  const categoriesRandom = categories
+  .filter((elem) => elem)
+  .sort(() => Math.random() - 0.5)
+  .slice(0, 5);
+console.log(categoriesRandom);
   const arr = products
     .filter((elem) => elem.discont_price)
     .sort(() => Math.random() - 0.5)
     .slice(0, 4);
-  console.log(arr);
   const onSubmit = (data) => {
     try {
       console.log(data);
@@ -64,7 +68,7 @@ export default function HomePage() {
           </Link>
         </div>
         <div className={styles.category}>
-          {categories.map((elem) => (
+          {categoriesRandom.map((elem) => (
             <Categories key={elem.id} {...elem} />
           ))}
         </div>
@@ -96,11 +100,11 @@ export default function HomePage() {
             </p>
 
             <button className={styles.btn_disc}>Get a discount</button>
-            <ToastContainer
+            {/* <ToastContainer
               position="top-right"
               autoClose={3000}
               theme="light"
-            />
+            /> */}
           </form>
         </div>
       </div>

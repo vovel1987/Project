@@ -11,13 +11,18 @@ export default function CategoriesProductPage() {
   const { id } = useParams();
   const nav = useNavigate();
 
+  const categories = useSelector((state) => state.category.list);
   const products = useSelector((state) => state.products.list);
   const data = products.filter((elem) => elem.show && elem.showDisc);
 
   const categoryProducts = data.filter((elem) => elem.categoryId === +id);
 
   const currentcategory = data.find((elem) => elem.categoryId === +id);
-  
+
+  const target = categoryProducts.map((elem) => {
+    const categoryTitle = categories.find(({ id }) => id === elem.categoryId);
+    return categoryTitle.title;
+  });
 
   const dispatch = useDispatch();
 
@@ -43,7 +48,7 @@ export default function CategoriesProductPage() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.text}>Category Items</h1>
+      <h1 className={styles.text}>{target[0]}</h1>
       <FilterBar products={products} />
       <div className={styles.container_products}>
         {categoryProducts.map((elem) => (

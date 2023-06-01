@@ -118,8 +118,8 @@ export const productSlice = createSlice({
           return a.discount - b.discount;
         } else if (action.payload === -1) {
           return b.discount - a.discount;
-        } else {
-          return [...state.list];
+        } else if(action.payload ===0) {
+          return a.id-b.id;
         }
       });
     },

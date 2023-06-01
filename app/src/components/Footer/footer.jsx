@@ -9,14 +9,18 @@ export default function Footer() {
       <div className={styles.info_block}>
         <div className={styles.contact_block}>
           <p className={styles.contact}>Contact :</p>
-          <div className={styles.div_phone}>
+          <a href="tel:+4911112223344" className={styles.div_phone}>
             <TbDeviceLandlinePhone className={styles.icon} />
             <p className={styles.number}>+49 177 568 8888</p>
-          </div>
-          <div className={styles.div_phone}>
-            <TfiEmail   className={styles.icon} />
-            <p className={styles.number} >garden@gmail.com</p>
-          </div>
+          </a>
+          <a
+            href="mailto:https://mail.google.com/"
+            className={styles.div_phone}
+          >
+            <TfiEmail className={styles.icon} />
+
+            <p className={styles.number}>garden@gmail.com</p>
+          </a>
           <div className={styles.links_block}>
             <a href="https://www.instagram.com/" target="_blank">
               <img

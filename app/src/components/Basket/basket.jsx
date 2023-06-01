@@ -6,6 +6,7 @@ import {
   deleteItem,
   incrementProdukt,
 } from "../../store/basketSlice/basketSliceN";
+import { Link } from "react-router-dom";
 
 export default function Basket({
   id,
@@ -32,13 +33,14 @@ export default function Basket({
     discont_price !== null ? count * discont_price : count * price
   ).toFixed(2);
 
-
-
+  const link = `/products/${id}`;
 
   return (
     <div className={styles.container}>
       {/* <div className={styles.block1}> */}
-      <img className={styles.image} src={`${url}${image}`} alt={title} />
+      <Link to={link}>
+        <img className={styles.image} src={`${url}${image}`} alt={title} />
+      </Link>
       <div className={styles.block1}>
         <p className={styles.title}>{title}</p>
         <div className={styles.count_block}>

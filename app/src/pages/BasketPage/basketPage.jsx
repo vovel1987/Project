@@ -25,7 +25,7 @@ export default function BasketPage() {
     if (products.length === 0) {
       return <p className={styles.loadPage}>Waiting Load Page ...</p>;
     } else if (basket.length === 0) {
-      return <p className={styles.loadPage}>Cart is`t empty</p>;
+      return <p className={styles.loadPage}>Cart is empty</p>;
     } else {
       return (
         <>

@@ -77,9 +77,9 @@ export default function FilterBar({ price, discont_price, id }) {
         <input type="checkbox" onClick={salesHandler} />
       </div> */}
       <label className={styles.label_select} htmlFor="priceValue">
-        Change price:
+        Sort by:
         <select className={styles.option} onChange={sortSelectValue}>
-          <option value="">Price</option>
+          <option value="0">Default</option>
           <option value="1">Min price</option>
           <option value="-1">Max price</option>
         </select>

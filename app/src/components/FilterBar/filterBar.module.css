@@ -11,6 +11,7 @@
 .burgerButton {
   display: none;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .container form {
@@ -31,12 +32,16 @@
   font-family: "Montserrat", sans-serif;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 .checkbox {
   display: flex;
   align-items: center;
   gap: 10px;
   justify-content: center;
+}
+input[type="checkbox"] {
+  accent-color: rgb(228, 118, 175);
 }
 
 .label_select {
@@ -54,6 +59,7 @@
   border: none;
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
+  cursor: pointer;
 }
 .input_search {
   width: 80%;
@@ -64,6 +70,7 @@
   border: none;
   height: 25px;
   align-self: center;
+  cursor: pointer;
 }
 .btn_close {
   display: none;

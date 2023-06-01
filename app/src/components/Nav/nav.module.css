@@ -93,12 +93,12 @@ nav {
 }
 .link1:hover {
   transform: scale(1.2, 1.2);
-  background-color: yellow;
   height: 30px;
-  border-radius: 5px;
   display: flex;
+  padding: 2px;
   align-items: center;
   justify-content: center;
+  border-bottom: 2px solid green;
 }
 
 .hamburger {
@@ -127,14 +127,14 @@ nav {
     transition: transform, opacity;
     transition-duration: 0.5s;
     z-index: 2;
-}
+  }
 
   .nav_open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
-  .a1{
+  .a1 {
     display: none;
   }
 
@@ -146,7 +146,7 @@ nav {
     width: 30%;
     box-sizing: border-box;
   }
-  .link1{
+  .link1 {
     font-size: 14px;
     font-weight: bold;
   }

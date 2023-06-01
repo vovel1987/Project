@@ -4,6 +4,7 @@ import Nav from "../Nav/nav";
 import HomePage from "../../pages/HomePage/homePage";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { asyncLoadCategories } from "../../store/asyncCategories/asyncCategories";
 import { asyncLoadProductss } from "../../store/asyncProducts/asyncProducts";
 import styles from "./App.module.css";
@@ -43,6 +44,11 @@ function App() {
   return (
     <div className={styles.app}>
       <Nav />
+      <ToastContainer
+              position="top-right"
+              autoClose={1000}
+              theme="light"
+            />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/categories/all" element={<CategoriesPage />} />

@@ -34,7 +34,8 @@
 .discount {
   font-size: 20px;
   font-weight: bold;
-  color: rgba(255, 50, 161, 1);
+  color: rgb(177, 30, 25);
+
 
   font-family: "Montserrat", sans-serif;
 }
@@ -64,7 +65,7 @@
   transition: 0.5 ease;
   display: block;
   cursor: pointer;
-  background-color: yellow;
+  background-color: rgb(189, 250, 187);
 }
 .container:hover {
   background-color: rgba(148, 94, 94, 0.5);

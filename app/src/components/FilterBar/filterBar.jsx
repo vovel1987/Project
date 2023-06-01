@@ -11,6 +11,7 @@ import {
 } from "../../store/productSlice/productSliceN";
 import { useRef } from "react";
 
+
 // } from "../../store/productsReducer/productsReducer";
 
 export default function FilterBar({ price, discont_price, id }) {
@@ -120,13 +121,13 @@ export default function FilterBar({ price, discont_price, id }) {
         </form>
 
         <div className={styles.checkbox}>
-          <p className={styles.form_p}>Discounted items </p>
-          <input type="checkbox" onClick={salesHandler} />
+          <label htmlFor='check' className={styles.form_p}>Discounted items </label>
+          <input id="check"  type="checkbox" onClick={salesHandler} />
         </div>
         <label className={styles.label_select} htmlFor="priceValue">
-          Change price:
+          Sort by:
           <select className={styles.option} onChange={sortSelectValue}>
-            <option value="">Price</option>
+            <option value="0">Default</option>
             <option value="1">Min price</option>
             <option value="-1">Max price</option>
           </select>

@@ -8,6 +8,7 @@ export default function Categories({ title, image, id }) {
 
   return (
     <div className={styles.container}>
+     
       <Link to={link}>
         <img className={styles.image} src={`${url}${image}`} alt="" />
         <p className={styles.title}>{title}</p>
