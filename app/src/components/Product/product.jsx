@@ -1,10 +1,8 @@
 import React from "react";
 import styles from "./product.module.css";
-import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProdukt } from "../../store/basketSlice/basketSliceN";
-// import { addProdukt } from "../../store/basketReducer/basketReducer";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 export default function Product({
   title,
   price,
@@ -13,15 +11,12 @@ export default function Product({
   image,
   id,
 }) {
-
-
- 
   const discount = ((price / discont_price) * 100 - 100).toFixed(2);
   const oldPrice = price;
   const discNull = 0;
   const url = "http://localhost:3333/";
   const dispatch = useDispatch();
-  const link = `/products/${id}`;
+
   return (
     <div className={styles.container}>
       {discont_price !== null ? (
@@ -38,9 +33,14 @@ export default function Product({
                 <p className={styles.discount}>{-discount}%</p>
               </div>
               <button
-                onClick={() => dispatch(addProdukt(id), toast.success("Your product was added", {
-                  theme: "dark",
-                }))}
+                onClick={() =>
+                  dispatch(
+                    addProdukt(id),
+                    toast.success("Your product was added", {
+                      theme: "dark",
+                    })
+                  )
+                }
                 className={styles.button}
               >
                 Add to Cart
@@ -65,14 +65,19 @@ export default function Product({
                 <p className={styles.discount}>{discNull}%</p>
               </div>
               <button
-                onClick={() => dispatch(addProdukt(id),  toast.success("Your product was added", {
-                  theme: "dark",
-                }))}
+                onClick={() =>
+                  dispatch(
+                    addProdukt(id),
+                    toast.success("Your product was added", {
+                      theme: "dark",
+                    })
+                  )
+                }
                 className={styles.button}
               >
                 Add to Cart
               </button>
-             
+
               <p className={styles.descr}>{description}</p>
             </div>
           </div>

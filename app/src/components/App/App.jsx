@@ -1,17 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import Nav from "../Nav/nav";
-// import "./App.css";
+
 import HomePage from "../../pages/HomePage/homePage";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import { asyncLoadCategories } from "../../store/asyncCategories/asyncCategories";
-import { asyncLoadProductss } from "../../store/asyncProducts/asyncProducts";
+import { ToastContainer, } from "react-toastify";
 import styles from "./App.module.css";
 import Footer from "../Footer/footer";
 import CategoriesPage from "../../pages/CategoriesPage/categoriesPage";
 import AllProductsPage from "../../pages/AllProductsPage/allProductsPage";
-import Products from "../Products/products";
 import AllSales from "../../pages/AllSales/allSales";
 import CategoriesProductPage from "../../pages/CategoriesProductPage/categoriesProductPage";
 import ProductPage from "../../pages/ProductPage/productPage";
@@ -22,19 +19,7 @@ import { fetchCategories } from "../../store/categoriesSlice/categoriessliceN";
 import ButtonToScroll from "../ButtontoScroll/buttonToScroll";
 
 function App() {
-  // const data = async() =>{
-  //   const response = await fetch('http://localhost:3333/products/all')
-  //   const data = await response.json()
-  //   console.log(data);
-  // }
-  // data()
-
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(asyncLoadCategories);
-  //   dispatch(asyncLoadProductss);
-  // }, []);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -44,11 +29,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Nav />
-      <ToastContainer
-              position="top-right"
-              autoClose={1000}
-              theme="light"
-            />
+      <ToastContainer position="top-right" autoClose={1000} theme="light" />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/categories/all" element={<CategoriesPage />} />
@@ -60,7 +41,7 @@ function App() {
 
         <Route path="/basket" element={<BasketPage />} />
       </Routes>
-      <ButtonToScroll/>
+      <ButtonToScroll />
       <Footer />
 
       <iframe

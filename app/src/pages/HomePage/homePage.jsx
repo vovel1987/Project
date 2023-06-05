@@ -6,7 +6,7 @@ import ProductDisc from "../../components/ProductDisc/productDisc";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { fetchPost } from "../../store/productSlice/productSliceN";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function HomePage() {
@@ -20,10 +20,10 @@ export default function HomePage() {
     formState: { errors },
   } = useForm();
   const categoriesRandom = categories
-  .filter((elem) => elem)
-  .sort(() => Math.random() - 0.5)
-  .slice(0, 5);
-console.log(categoriesRandom);
+    .filter((elem) => elem)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5);
+
   const arr = products
     .filter((elem) => elem.discont_price)
     .sort(() => Math.random() - 0.5)
@@ -33,7 +33,7 @@ console.log(categoriesRandom);
       console.log(data);
       fetchPost(data);
       reset();
-      // toast("sale coupon");
+
       toast.success("You received a coupon in the phone number", {
         theme: "dark",
       });
@@ -100,11 +100,6 @@ console.log(categoriesRandom);
             </p>
 
             <button className={styles.btn_disc}>Get a discount</button>
-            {/* <ToastContainer
-              position="top-right"
-              autoClose={3000}
-              theme="light"
-            /> */}
           </form>
         </div>
       </div>

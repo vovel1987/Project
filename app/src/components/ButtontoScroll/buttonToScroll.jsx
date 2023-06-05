@@ -3,20 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./buttontoScroll.module.css";
 
 export default function ButtonToScroll() {
-  //   window.onscroll = function () {
-  //     scrollFunction();
-  //   };
-
-  //   function scrollFunction() {
-  //     if (
-  //       document.body.scrollTop > 20 ||
-  //       document.documentElement.scrollTop > 20
-  //     ) {
-  //       mybutton.style.display = "block";
-  //     } else {
-  //       mybutton.style.display = "none";
-  //     }
-  //   }
+  
 
   const [scroll, setScroll] = useState(false);
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./basket.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   decrementProdukt,
   deleteItem,
@@ -19,16 +19,6 @@ export default function Basket({
   const url = "http://localhost:3333/";
   const dispatch = useDispatch();
 
-  const { basket, products } = useSelector((state) => state);
-
-  //   const itemPrice = basket.reduce((acc, elem) => {
-  //     const target = products.find(({ id }) => id === elem.id);
-  // console.log(target);
-  //     return target.discont_price
-  //       ? acc + elem.count * target.discont_price
-  //       : acc + elem.count * target.price;
-  //   }, 0);
-
   const summe = (
     discont_price !== null ? count * discont_price : count * price
   ).toFixed(2);
@@ -37,7 +27,6 @@ export default function Basket({
 
   return (
     <div className={styles.container}>
-      {/* <div className={styles.block1}> */}
       <Link to={link}>
         <img className={styles.image} src={`${url}${image}`} alt={title} />
       </Link>
@@ -75,7 +64,6 @@ export default function Basket({
           alt="Delete"
         />
       </button>
-      {/* </div> */}
     </div>
   );
 }

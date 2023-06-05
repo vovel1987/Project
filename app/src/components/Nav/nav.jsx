@@ -28,7 +28,7 @@ export default function Nav() {
     },
   ];
 
-  const link = `categories/all`;
+ 
   const link2 = `/`;
 
   const isActive = ({ isActive }) =>
@@ -46,20 +46,11 @@ export default function Nav() {
         <Link to={link2} className={styles.a}>
           <img className={styles.icon} src="/images/icon1.png" alt="Icon" />
         </Link>
-
-        {/* <Link className={styles.a1} to={link}>
-          <button className={styles.button}>Catalog</button>
-        </Link> */}
       </div>
       <div className={styles.block2}>
         <div className={styles.links} ref={userRefLinks}>
           {links.map((link) => (
-            <NavLink
-              // className={styles.link1}
-              className={isActive}
-              key={link.id}
-              to={link.to}
-            >
+            <NavLink className={isActive} key={link.id} to={link.to}>
               {link.label}
             </NavLink>
           ))}
@@ -69,7 +60,6 @@ export default function Nav() {
           {basketLink.map((link) => (
             <NavLink
               data-count={link.count || undefined}
-              // className={styles.link1}
               className={isActive}
               key={link.id}
               to={link.to}

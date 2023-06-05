@@ -1,19 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import styles from "./basketTotal.module.css";
-import { Link } from "react-router-dom";
+
 import React from "react";
 import {
   basketFetchPost,
   deleteAll,
 } from "../../store/basketSlice/basketSliceN";
-import { ToastContainer, toast } from "react-toastify";
-import { useState } from "react";
+import {  toast } from "react-toastify";
+
 
 export default function BasketTotal(element) {
   const basket = useSelector((state) => state.basket.list);
   const products = useSelector((state) => state.products.list);
-  const { value, setvalue } = useState();
+
   const totalPrice = basket
     .reduce((acc, item) => {
       const product = products.find(({ id }) => id === item.id);
@@ -32,7 +32,6 @@ export default function BasketTotal(element) {
 
   const onSubmit = (data) => {
     try {
-      // basketFetchPost(data);
       const target = element.element.map((elem) => ({
         ...elem,
         telefon: data.telefon,
@@ -46,7 +45,7 @@ export default function BasketTotal(element) {
         dispatch(deleteAll());
       }, 3000);
     } catch (error) {
-      console.log(error);
+      
     }
   };
 
@@ -66,18 +65,13 @@ export default function BasketTotal(element) {
             maxLength: 22,
           })}
         />
-          <p className={styles.error}>
-              {errors.telefon !== undefined
-                ? (errors.telefon.type = "Field is empty")
-                : ""}
-            </p>
+        <p className={styles.error}>
+          {errors.telefon !== undefined
+            ? (errors.telefon.type = "Field is empty")
+            : ""}
+        </p>
         <button>Buy now</button>
       </form>
-      {/* <Link to="/"> */}
-        {/* <div>
-          <ToastContainer position="top-right" autoClose={3000} theme="light" />
-        </div> */}
-      {/* </Link> */}
     </div>
   );
 }

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./categoriesProductPage.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Products from "../../components/Products/products";
 import FilterBar from "../../components/FilterBar/filterBar";
-import { resetState } from "../../store/productsReducer/productsReducer";
-
+import { resetState } from "../../store/productSlice/productSliceN";
 
 export default function CategoriesProductPage() {
   const { title } = useParams();
@@ -20,19 +19,7 @@ export default function CategoriesProductPage() {
     (elem) => elem.categoryId === currentItem.id
   );
 
-  // const target = categoryProducts.map((elem) => {
-  //   const categoryTitle = categories.find(({ id }) => id === elem.categoryId);
-  //   return categoryTitle.title;
-  // });
-
   const dispatch = useDispatch();
-
-  // const fetchData = async () => {
-  //   const resp = await fetch(`http://localhost:3333/categories/${id}`);
-  //   const data = await resp.json();
-  //   console.log(data.data);
-  //   return data
-  // };
 
   useEffect(() => {
     dispatch(resetState());

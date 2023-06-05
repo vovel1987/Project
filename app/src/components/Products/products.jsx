@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./allProducts.module.css";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-// import { addProdukt } from "../../store/basketReducer/basketReducer";
+
 import { addProdukt } from "../../store/basketSlice/basketSliceN";
-import FilterBar from "../FilterBar/filterBar";
+
 
 export default function Products({
   title,

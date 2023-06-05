@@ -3,7 +3,7 @@ import styles from "./productPage.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Product from "../../components/Product/product";
-import NotFound from "../NotFound/notFound";
+
 
 export default function ProductPage() {
   const { id } = useParams();
