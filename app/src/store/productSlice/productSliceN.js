@@ -50,7 +50,7 @@ export const productSlice = createSlice({
       const priceTo = action.payload.max;
       const defaultPriceTo = priceTo === "" ? Infinity : priceTo;
 
-      console.log(defaultPriceTo);
+     
       state.list = state.list.map((elem) => ({
         ...elem,
         showDisc: true,
