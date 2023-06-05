@@ -9,6 +9,12 @@
     
 
 }
+.error {
+    font-size: 19px;
+    color: red;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+  }
 .price{
     display:flex;
     justify-content: space-between;

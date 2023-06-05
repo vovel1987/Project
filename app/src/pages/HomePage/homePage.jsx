@@ -63,7 +63,7 @@ console.log(categoriesRandom);
       <div className={styles.catalog}>
         <div className={styles.catalogBlock1}>
           <h2 className={styles.title2}>Catalog</h2>
-          <Link to={`categories/all`}>
+          <Link to={`/categories/all`}>
             <button className={styles.catalogBtn}>All Categories</button>
           </Link>
         </div>
@@ -95,7 +95,7 @@ console.log(categoriesRandom);
 
             <p className={styles.error}>
               {errors.telefon !== undefined
-                ? (errors.telefon.type = "Field is`t empty")
+                ? (errors.telefon.type = "Field is empty")
                 : ""}
             </p>
 

@@ -54,7 +54,7 @@ function App() {
         <Route path="/categories/all" element={<CategoriesPage />} />
         <Route path="/products/all" element={<AllProductsPage />} />
         <Route path="/products/all/sales" element={<AllSales />} />
-        <Route path="/categories/:id" element={<CategoriesProductPage />} />
+        <Route path="/categories/:title" element={<CategoriesProductPage />} />
         <Route path="products/:id" element={<ProductPage />} />
         <Route path="/*" element={<NotFound />} />
 

@@ -66,6 +66,11 @@ export default function BasketTotal(element) {
             maxLength: 22,
           })}
         />
+          <p className={styles.error}>
+              {errors.telefon !== undefined
+                ? (errors.telefon.type = "Field is empty")
+                : ""}
+            </p>
         <button>Buy now</button>
       </form>
       {/* <Link to="/"> */}

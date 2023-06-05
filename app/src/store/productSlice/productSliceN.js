@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// import IconButton from "@mui/material/IconButton";
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
@@ -13,7 +14,6 @@ export const fetchProducts = createAsyncThunk(
           show: true,
           showDisc: true,
           discount: elem.price,
-          
         };
       } else {
         return {
@@ -21,7 +21,6 @@ export const fetchProducts = createAsyncThunk(
           show: true,
           showDisc: true,
           discount: elem.discont_price,
-          
         };
       }
     });
@@ -39,8 +38,6 @@ export const fetchPost = createAsyncThunk("products/fetchPost", async (obj) => {
   const data = await response.json();
   console.log(data);
 });
-
-
 
 export const productSlice = createSlice({
   name: "products",
@@ -71,19 +68,20 @@ export const productSlice = createSlice({
 
     filterPrice: (state, action) => {
       const priceFrom = action.payload.min;
-      const priceTo = action.payload.max === "" ? Infinity : action.payload.max;
+      const priceTo = action.payload.max;
+      const defaultPriceTo = priceTo === "" ? Infinity : priceTo;
 
+      console.log(defaultPriceTo);
       state.list = state.list.map((elem) => ({
         ...elem,
         showDisc: true,
-        priceShow: true,
       }));
 
       state.list = state.list.map((elem) => {
         if (
           !(elem.discont_price === null
-            ? elem.price >= priceFrom && elem.price <= priceTo
-            : elem.discont_price >= priceFrom && elem.discont_price <= priceTo)
+            ? elem.price >= priceFrom && elem.price <= defaultPriceTo
+            : elem.discont_price >= priceFrom && elem.discont_price <= defaultPriceTo)
         ) {
           return { ...elem, showDisc: false };
         } else {
@@ -91,6 +89,18 @@ export const productSlice = createSlice({
         }
       });
 
+      // if (priceFrom || defaultpriceTo) {
+      //   state.list = state.list.map((prod) => ({
+      //     ...prod,
+      //     showDisc:
+      //       (prod.discont_price || prod.price) >= priceFrom &&
+      //       (prod.discont_price || prod.price) <= defaultpriceTo,
+      //   }));
+      // } else
+      //   state.list = state.list.map((prod) => ({
+      //     ...prod,
+      //     showDisc: true,
+      //   }));
     },
 
     filterCheck: (state, action) => {
@@ -118,8 +128,8 @@ export const productSlice = createSlice({
           return a.discount - b.discount;
         } else if (action.payload === -1) {
           return b.discount - a.discount;
-        } else if(action.payload ===0) {
-          return a.id-b.id;
+        } else if (action.payload === 0) {
+          return a.id - b.id;
         }
       });
     },

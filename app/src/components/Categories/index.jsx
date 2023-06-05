@@ -3,7 +3,7 @@ import styles from "./categories.module.css";
 import { Link } from "react-router-dom";
 export default function Categories({ title, image, id }) {
   const url = "http://localhost:3333/";
-  const link = `/categories/${id}`;
+  const link = `/categories/${title}`;
   console.log(id);
 
   return (

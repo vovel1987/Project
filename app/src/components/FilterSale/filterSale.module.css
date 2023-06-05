@@ -1,65 +1,74 @@
 .container {
-    display: grid;
-    grid-template-columns: 3% 25% 42% 30%;
-    justify-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  
-  .container form {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  .form_p {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Montserrat", sans-serif;
-  }
-  .form_input {
-    width: 20%;
-    height: 25px;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: "Montserrat", sans-serif;
-    border-radius: 5px;
-    border: none;
-  }
+  display: grid;
+  grid-template-columns: 3% 40% 27% 30%;
+  justify-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
-  
+.container form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.form_p {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.form_input {
+  width: 20%;
+  height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  border: none;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
 .label_select {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Montserrat", sans-serif;
-  }
-  .option {
-      font-size: 16px;
-      border-radius: 5px;
-      height: 25px;
-      border: none;
-      font-weight: 400;
-      font-family: "Montserrat", sans-serif;
-  }
-  .input_search {
-    width: 80%;
-    font-size: 16px;
-    font-weight: 400;
-    font-family: "Montserrat", sans-serif;
-    border-radius: 5px;
-    border: none;
-    height: 25px;
-    align-self: center;
-  }
-  .btn_close {
-    display: none;
-  }
-  .filter_text {
-    display: none;
-  }
-  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+.option {
+  font-size: 16px;
+  border-radius: 5px;
+  height: 25px;
+  border: none;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+.input_search {
+  width: 80%;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  border: none;
+  height: 25px;
+  align-self: center;
+  cursor: pointer;
+}
+.btn_close {
+  display: none;
+}
+.filter_text {
+  display: none;
+}
+.btn_price {
+  font-size: 19px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
 @media (max-width: 768px) {
   .btn_close {
     display: block;
@@ -71,7 +80,7 @@
     justify-content: center;
     background-color: white;
   }
-  .btn_close:hover{
+  .btn_close:hover {
     cursor: pointer;
     color: red;
     transform: scale(1.2, 1.2);
@@ -83,7 +92,7 @@
     justify-content: flex-end;
     height: 20px;
   }
-  
+
   .filter_text {
     display: block;
     display: flex;
@@ -116,19 +125,20 @@
   .container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    width: 200px;
+    justify-content: space-around;
+    padding: 0 10px;
+    width: 300px;
     padding: 0 10px;
     align-items: baseline;
     border-radius: 10px;
-  
+
     min-width: 100px;
-    height: 260px;
+    height: 350px;
     text-align: center;
-  
+
     background-color: rgb(216, 216, 175);
     position: absolute;
-  
+
     left: 0;
     top: -30px;
     transform: translateX(-110%);

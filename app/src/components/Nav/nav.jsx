@@ -14,9 +14,8 @@ export default function Nav() {
     { id: 3, label: "All Sales", to: "/products/all/sales" },
     {
       id: 4,
-     label:'Categories',
+      label: "Categories",
       to: "/categories/all",
-     
     },
   ];
 
@@ -53,10 +52,9 @@ export default function Nav() {
         </Link> */}
       </div>
       <div className={styles.block2}>
-        <div className={styles.links} ref={userRefLinks}   >
+        <div className={styles.links} ref={userRefLinks}>
           {links.map((link) => (
             <NavLink
-          
               // className={styles.link1}
               className={isActive}
               key={link.id}
